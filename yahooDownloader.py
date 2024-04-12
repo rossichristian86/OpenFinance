@@ -61,4 +61,4 @@ class YahooDownloader():
 
 if __name__ == "__main__":
     yd = YahooDownloader()
-    yd.getFinancials("002594.SZ")
+    yd.getFinancials("BRK-B")
