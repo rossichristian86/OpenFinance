@@ -68,13 +68,13 @@ class CFinance:
 
 
 if __name__ == "__main__":
-    stockData = CFinance("BAC")
+    stockData = CFinance("MCRI")
     # repr test
     #print(stockData)
     #print(stockData.financials['Operating Income'])
 
     #print(stockData.info[Info.EnterpriseValue.value])
-    #print(stockData.financials[Financials.RevenuePerShareGrowth1Y.value])
+    print(stockData.financials[Financials.RevenuePerShareGrowth1Y.value])
     #print(stockData.financials[Financials.RevenueGrowth1Y.value])
     #print(stockData.financials[Financials.BasicAverageShares.value])
     #print(stockData.financials[Financials.Revenues.value])
