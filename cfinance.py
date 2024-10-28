@@ -15,6 +15,8 @@ class CFinance:
 
         quarterly_financials = stock.quarterly_financials.T
 
+        #print(quarterly_financials)
+
         # Ottieni le informazioni della stock
         info = stock.info
 
@@ -51,8 +53,14 @@ class CFinance:
         fyoy.add_diluted_revenue_per_share_grow_1y(financials, Financials.RevenuePerShareGrowth1Y.value)
         fyoy.add_revenue_per_share_grow_1y(financials, Financials.DilutedRevenuePerShareGrowth1Y.value)
 
+        ### SEZIONE custom infos
+        #info["zChrisValue"] = "BELLA"
+        #quarterly_financials[Quarterlyfinancials.TotalRevenueM.value] = round(quarterly_financials[Quarterlyfinancials.TotalRevenue.value] / 1_000_000, 2)
+
+
         self.financials = financials
         self.info = info
+        self.quarterly_financials = quarterly_financials
 
 
     def __repr__(self) -> str:
@@ -69,12 +77,14 @@ class CFinance:
 
 if __name__ == "__main__":
     stockData = CFinance("MCRI")
+    
+    print(M(stockData.quarterly_financials[Quarterlyfinancials.TotalRevenue.value]))
     # repr test
     #print(stockData)
     #print(stockData.financials['Operating Income'])
 
     #print(stockData.info[Info.EnterpriseValue.value])
-    print(stockData.financials[Financials.RevenuePerShareGrowth1Y.value])
+    #print(stockData.financials[Financials.RevenuePerShareGrowth1Y.value])
     #print(stockData.financials[Financials.RevenueGrowth1Y.value])
     #print(stockData.financials[Financials.BasicAverageShares.value])
     #print(stockData.financials[Financials.Revenues.value])
