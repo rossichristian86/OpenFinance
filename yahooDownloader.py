@@ -1,5 +1,7 @@
 import yfinance as yf
 import json
+import pickle
+import pandas as pd
 
 class YahooDownloader():
 
@@ -14,6 +16,11 @@ class YahooDownloader():
 
 
         symbol = yf.Ticker(symbolStr.upper())
+
+        #symbol_info = {"symbol": symbol.info, "income_stmt": symbol.income_stmt, "balance_sheet": symbol.balance_sheet, "cashflow": symbol.cashflow}
+
+        #with open(symbolStr + ".pkl", "wb") as file:
+        #    pickle.dump(symbol_info, file)
 
         # get all stock info
         symbol.info
@@ -59,6 +66,9 @@ class YahooDownloader():
         #symbol.quarterly_cashflow
         # see `Ticker.get_income_stmt()` for more options
 
+
 if __name__ == "__main__":
     yd = YahooDownloader()
-    yd.getFinancials("BRK-B")
+    yd.getFinancials("AAPL")
+
+    
