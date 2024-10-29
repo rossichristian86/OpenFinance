@@ -35,9 +35,9 @@ def add_operating_margin(obj_financials, label):
         # Calcola Revenue Per Share se i dati necessari sono disponibili
         if "Total Revenue" in obj_financials.columns and "Operating Income" in obj_financials.columns:
             total_revenue = obj_financials.iloc[i]["Total Revenue"]
-            net_income = obj_financials.iloc[i]["Operating Income"]
-            if pd.notna(total_revenue) and pd.notna(net_income) and net_income != 0:
-                revenue_per_share = net_income / total_revenue
+            operating_income = obj_financials.iloc[i]["Operating Income"]
+            if pd.notna(total_revenue) and pd.notna(operating_income) and operating_income != 0:
+                revenue_per_share = operating_income / total_revenue
                 obj_financials.at[obj_financials.index[i], label] = revenue_per_share
 
 # Calcola il Revenue Per Share per ogni anno e lo aggiungi al DataFrame principale

@@ -3,6 +3,7 @@ import pandas as pd
 import utils.financialsY as fy
 import utils.financialsYoY as fyoy
 from utils.defines import *
+import utils.cfutils as cf
 
 class CFinance:
     def __init__(self, ticker) -> None:
@@ -78,7 +79,8 @@ class CFinance:
 if __name__ == "__main__":
     stockData = CFinance("MCRI")
     
-    print(M(stockData.quarterly_financials[Quarterlyfinancials.TotalRevenue.value]))
+    print(cf.M(stockData.quarterly_financials[Quarterlyfinancials.TotalRevenue.value]))
+    print(stockData.info.keys())
     # repr test
     #print(stockData)
     #print(stockData.financials['Operating Income'])

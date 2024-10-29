@@ -1,41 +1,29 @@
 from enum import Enum
 
-# Converte in milioni
-def Millions(Obj):
-    return round(Obj / 1_000_000, 2)
-
-# Converte in milioni
-def M(Obj):
-    return Millions(Obj)
-
-# Converte in migliaia
-def Tousands(Obj):
-    return round(Obj / 1_000, 2)
-
-# Converte in migliaia
-def K(Obj):
-    return Tousands(Obj)
 
 class Info(Enum):
+
+    #Basic
     EnterpriseValue = 'enterpriseValue'
     MarketCap = 'marketCap'
     SharesOutstanding = 'sharesOutstanding'
+    TrailingEps = 'trailingEps'
+    ForwardEps = 'forwardEps'
+    TotalRevenue = 'totalRevenue'
+    TotalDebt = 'totalDebt'
+    OperatingMargins = 'operatingMargins'
+
+    #Custom
+    #####
+
 
 class Quarterlyfinancials(Enum):
     TotalRevenue = 'Total Revenue'
 
 
-
 class Financials(Enum):
-    RevenuePerShare = 'Revenue Per Share'
-    DilutedRevenuePerShare = 'Diluted Revenue Per Share'
-    RevenueGrowth1Y = 'Revenue Growth 1Y'
-    RevenuePerShareGrowth1Y = 'Revenue Per Share Growth 1Y'
-    DilutedRevenuePerShareGrowth1Y = 'Diluted Revenue Per Share Growth 1Y'
-    NetMargin = "Net Margin"
-    OperatingMargin = "Operating Margin"
 
-    #Basics
+    #Basic
     BasicAverageShares = 'Basic Average Shares'
     DilutedAverageShares = 'Diluted Average Shares'
     Revenues = 'Total Revenue'
@@ -47,6 +35,37 @@ class Financials(Enum):
     OperatingRevenue = 'Operating Revenue'
     CostOfRevenue = 'Cost Of Revenue'
 
+    #Custom
+    RevenuePerShare = 'Revenue Per Share'
+    DilutedRevenuePerShare = 'Diluted Revenue Per Share'
+    RevenueGrowth1Y = 'Revenue Growth 1Y'
+    RevenuePerShareGrowth1Y = 'Revenue Per Share Growth 1Y'
+    DilutedRevenuePerShareGrowth1Y = 'Diluted Revenue Per Share Growth 1Y'
+    NetMargin = "Net Margin"    # net_income/total_revenues
+    OperatingMargin = "Operating Margin"    # operating_income/total_revenues
+
+
+    '''TODO da aggiungere se serve a info
+        'address1', 'city', 'state', 'zip', 'country', 'phone', 'website', 'industry', 'industryKey', 'industryDisp', 'sector', 
+        'sectorKey', 'sectorDisp', 'longBusinessSummary', 'fullTimeEmployees', 'companyOfficers', 'auditRisk', 'boardRisk',
+        'compensationRisk', 'shareHolderRightsRisk', 'overallRisk', 'governanceEpochDate', 'compensationAsOfEpochDate', 
+        'maxAge', 'priceHint', 'previousClose', 'open', 'dayLow', 'dayHigh', 'regularMarketPreviousClose', 'regularMarketOpen', 
+        'regularMarketDayLow', 'regularMarketDayHigh', 'dividendRate', 'dividendYield', 'exDividendDate', 'payoutRatio', 'beta', 
+        'trailingPE', 'forwardPE', 'volume', 'regularMarketVolume', 'averageVolume', 'averageVolume10days', 'averageDailyVolume10Day',
+        'fiftyTwoWeekLow', 'fiftyTwoWeekHigh', 'priceToSalesTrailing12Months', 'fiftyDayAverage', 'twoHundredDayAverage',
+        'trailingAnnualDividendRate', 'trailingAnnualDividendYield', 'currency', 'enterpriseValue', 'profitMargins', 'floatShares',
+        'sharesOutstanding', 'sharesShort', 'sharesShortPriorMonth', 'sharesShortPreviousMonthDate', 'dateShortInterest',
+        'sharesPercentSharesOut', 'heldPercentInsiders', 'heldPercentInstitutions', 'shortRatio', 'shortPercentOfFloat',
+        'impliedSharesOutstanding', 'bookValue', 'priceToBook', 'lastFiscalYearEnd', 'nextFiscalYearEnd', 'mostRecentQuarter', 
+        'earningsQuarterlyGrowth', 'netIncomeToCommon',  'pegRatio', 'lastSplitFactor', 'lastSplitDate',
+        'enterpriseToRevenue', 'enterpriseToEbitda', '52WeekChange', 'SandP52WeekChange', 'lastDividendValue', 'lastDividendDate', 
+        'exchange', 'quoteType', 'symbol', 'underlyingSymbol', 'shortName', 'longName', 'firstTradeDateEpochUtc', 'timeZoneFullName', 
+        'timeZoneShortName', 'uuid', 'messageBoardId', 'gmtOffSetMilliseconds', 'currentPrice', 'targetHighPrice', 'targetLowPrice', 
+        'targetMeanPrice', 'targetMedianPrice', 'recommendationMean', 'recommendationKey', 'numberOfAnalystOpinions', 
+        'totalCash', 'totalCashPerShare', 'ebitda',  'quickRatio', 'currentRatio',  'debtToEquity',
+        'revenuePerShare', 'returnOnAssets', 'returnOnEquity', 'earningsGrowth', 'revenueGrowth', 
+        'grossMargins', 'ebitdaMargins',  'financialCurrency', 'trailingPegRatio'
+    '''
 
 
     ''' TODO da aggiungere se serve ai financials
