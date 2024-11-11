@@ -5,7 +5,7 @@ import utils.financialsYoY as fyoy
 from utils.defines import *
 import utils.cfutils as cf
 
-class CFinance:
+class OFinance:
     def __init__(self, ticker) -> None:
 
         # Scarica i dati della stock
@@ -77,7 +77,7 @@ class CFinance:
 
 
 if __name__ == "__main__":
-    stockData = CFinance("MCRI")
+    stockData = OFinance("MCRI")
     
     print(cf.M(stockData.quarterly_financials[Quarterlyfinancials.TotalRevenue.value]))
     print(stockData.info.keys())
